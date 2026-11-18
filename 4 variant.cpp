@@ -19,6 +19,14 @@ void shiftRight(vector<int>& v, int k) {
     k = k % v.size();
     if (k == 0) return;
 
-    // Для сдвига вправо мы "откусываем" кусок с конца
+    // Для сдвига вправо мы отрываем кусок с конца
     rotate(v.begin(), v.end() - k, v.end());
+}
+
+// Функция для вывода
+void printVector(const vector<int>& v) {
+    for (int x : v) {
+        cout << x << " ";
+    }
+    cout << "\n";
 }
