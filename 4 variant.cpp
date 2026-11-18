@@ -30,3 +30,29 @@ void printVector(const vector<int>& v) {
     }
     cout << "\n";
 }
+
+int main() {
+    vector<int> numbers = { 1, 2, 3, 4, 5 };
+    int k = 2;
+
+    cout << "Исходный вектор: ";
+    printVector(numbers);
+
+    vector<int> left_shifted = numbers;
+    shiftLeft(left_shifted, k);
+    cout << "Сдвиг влево на " << k << ": ";
+    printVector(left_shifted);
+
+    vector<int> right_shifted = numbers;
+    shiftRight(right_shifted, k);
+    cout << "Сдвиг вправо на " << k << ": ";
+    printVector(right_shifted);
+
+    // Краевой случай: k больше размера (7 % 5 = 2)
+    cout << "\nСдвиг влево на 7 (k > size): ";
+    vector<int> large_k = numbers;
+    shiftLeft(large_k, 7);
+    printVector(large_k);
+
+    return 0;
+}
